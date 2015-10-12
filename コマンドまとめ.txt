@@ -1,0 +1,25 @@
+cat A* > name_start_from_A
+cat A* > name_start_from_A 2> name_start_from_A_Err
+cat A* > name_start_form_A 2> /dev/null
+command > log 2>&1 //標準エラー出力を標準出力と一緒にしたい
+command > 2>&1 > log //意味が違う
+
+cat << EOF > log 2>&1  // ヒアドキュメントを使用。
+
+ls | wc -l //ファイル数を取得
+
+
+sed 's/置換前文字列/置換後文字列/g' ファイルPATH
+sed '4s/line/gyou/g' ファイルPATH //4行目のlineをgyouに
+
+date
+echo `date +%Y/%m/%d`
+
+command1 && command2 //左が正常終了した場合に、command2が実行
+command1 || command2 //左が以上終了した場合に、command2が実行
+終了コードは echo $?(下記if文との連携)
+if mkdir dir
+then 
+   cd dir
+fi
+
