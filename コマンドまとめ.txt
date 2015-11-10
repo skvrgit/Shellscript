@@ -29,6 +29,6 @@ sh $HOME/.profileでは変更した値は反映されないが、
 . $HOME/.profileでは反映される。
 別のスクリプトに変数を渡したい場合：exportもしくは . script.shとする。
 
-
+find *.* * | xargs md5sum | tee result.txt
 
 
